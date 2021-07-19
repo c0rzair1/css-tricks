@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/cube.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="cube">
+      <div class="side front">front</div>
+      <div class="side back">back</div>
+      <div class="side right">right</div>
+      <div class="side left">left</div>
+      <div class="side top">top</div>
+      <div class="side bottom">bottom</div>
+    </div>
+  </div>
+
+  <script>
+    // Cube rotate
+    let rotateX = 0,
+      rotateY = 0;
+
+    document.addEventListener("keydown", (e) => {
+      console.log(e.keyCode)
+      if (e.keyCode === 37) {
+        rotateY -= 4;
+      } else if (e.keyCode === 38) {
+        rotateX += 4;
+      } else if (e.keyCode === 39) {
+        rotateY += 4;
+      } else if (e.keyCode === 40) {
+        rotateX -= 4;
+      }
+
+      document.querySelector('.cube').style.transform =
+        `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+    })
+  </script>
+</body>
+
+</html>
